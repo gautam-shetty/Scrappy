@@ -1,0 +1,19 @@
+{
+  "name": "scrappy",
+  "version": "1.0.0",
+  "description": "A bot",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gautam-shetty/Scrappy.git"
+  },
+  "author": "Gautam Shetty",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gautam-shetty/Scrappy/issues"
+  },
+  "homepage": "https://github.com/gautam-shetty/Scrappy#readme",
+  "dependencies": {
+    "discord.js": "^13.1.0"
+  }
+}
