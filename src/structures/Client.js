@@ -3,6 +3,8 @@ const Command = require("./Command.js");
 const Event = require("./Event.js");
 const fs = require("fs");
 const config = require("../data/config.json");
+
+// 32767 to include all intents flag
 const intents = new Discord.Intents(32767);
 
 class Client extends Discord.Client {
