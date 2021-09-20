@@ -19,17 +19,30 @@ class Client extends Discord.Client {
     }
 
     start(token) {
-        fs.readdirSync('./src/commands')
-            .filter(file => file.endsWith('.js'))
-            .forEach(file => {
-                /**
-                 * @type {Command}
-                 */
-                const command = require(`../commands/${file}`);
-                console.log(`Command ${command.name} loaded`);
-                this.commands.set(command.name, command);
-            })
+        console.group('Bot Loader:');
 
+        // Commands Loader
+        console.group('Commands Loader:');
+        fs.readdirSync('./src/commands/').forEach(dir => {
+            // Commands category
+            console.group(`Category ${dir}`);
+            fs.readdirSync(`./src/commands/${dir}/`)
+                .filter(file => file.endsWith('.js'))
+                .forEach(file => {
+                    /**
+                     * @type {Command}
+                     */
+                    const command = require(`../commands/${dir}/${file}`);
+                    console.log(`Command ${command.name} loaded`);
+                    this.commands.set(command.name, command);
+                });
+            console.groupEnd();
+        });
+
+        console.groupEnd();
+
+        // Events Loader
+        console.group('Events Loader:');
         fs.readdirSync('./src/events')
             .filter(file => file.endsWith('.js'))
             .forEach(file => {
@@ -40,7 +53,9 @@ class Client extends Discord.Client {
                 console.log(`Event ${event.event} loaded`);
                 this.on(event.event, event.run.bind(null, this));
             })
+        console.groupEnd();
 
+        console.groupEnd();
         this.login(token);
     }
 }

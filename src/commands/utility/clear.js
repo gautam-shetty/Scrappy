@@ -1,4 +1,4 @@
-const Command = require("../structures/Command.js");
+const Command = require("../../structures/Command.js");
 
 module.exports = new Command({
     name: 'clear',
@@ -16,7 +16,7 @@ module.exports = new Command({
 
         msg.channel.bulkDelete(amountParsed);
 
-        const successMsg = await msg.channel.send(`Cleared ${amountParsed} messages!`);
+        const successMsg = await msg.channel.send(`Cleared ${amountParsed} messages ☑️`);
         setTimeout(() => successMsg.delete(), 5000);
     }
 })
