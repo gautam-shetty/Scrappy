@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
-const Command = require("./Command.js");
-const Event = require("./Event.js");
+const Command = require("../structures/Command.js");
+const Event = require("../structures/Event.js");
 const fs = require("fs");
 const config = require("../data/config.json");
 
