@@ -38,7 +38,7 @@ class Client extends Discord.Client {
                 });
             console.groupEnd();
         });
-
+        
         console.groupEnd();
 
         // Events Loader
@@ -61,3 +61,5 @@ class Client extends Discord.Client {
 }
 
 module.exports = Client;
+module.exports.timeCheck = undefined;
+module.exports.val = 0;

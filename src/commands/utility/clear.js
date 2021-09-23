@@ -8,7 +8,7 @@ module.exports = new Command({
 
         const amount = args[1];
         if (!amount || isNaN(amount)) 
-            return msg.reply(`${amount == undefined ? "Nothing" : amount} is not a number!`);
+            return msg.reply(`${amount == undefined ? "(_Nothing_)" : amount} is not a number!`);
 
         const amountParsed = parseInt(amount);
         if(amountParsed > 100) 
