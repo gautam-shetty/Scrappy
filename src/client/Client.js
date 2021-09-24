@@ -33,12 +33,12 @@ class Client extends Discord.Client {
                      * @type {Command}
                      */
                     const command = require(`../commands/${dir}/${file}`);
+                    command.category = dir[0].toUpperCase() + dir.slice(1).toLowerCase();
                     console.log(`Command ${command.name} loaded`);
                     this.commands.set(command.name, command);
                 });
             console.groupEnd();
         });
-        
         console.groupEnd();
 
         // Events Loader
